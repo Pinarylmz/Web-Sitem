@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yetenekler | Pınar Yılmaz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-bordo shadow-sm" style="background-color: var(--bordo-dark) !important;">
+        <div class="container">
+            <a class="navbar-brand fw-bold name-title fs-3 d-flex align-items-center" href="index.html">
+                <img src="profile.jpg.jpeg" alt="Pınar Yılmaz" class="navbar-brand-img">
+                Pınar Yılmaz
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Hakkımda</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="skills.html">Yetenekler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Özgeçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projeler</a></li>
+                    <li class="nav-item mt-3 mt-lg-0 ms-lg-3"><a class="btn btn-outline-light btn-sm px-4 rounded-pill" href="contact.html">Bana Ulaşın</a></li>
+                    <!-- Paylaş Butonu -->
+                    <li class="nav-item ms-1">
+                        <button class="btn btn-link nav-link px-2" onclick="shareWebsite()" title="Siteyi Paylaş">
+                            <i class="fas fa-share-nodes fs-5"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="py-5 bg-white flex-grow-1 d-flex align-items-center">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="text-bordo fw-bold position-relative section-title d-inline-block">Yeteneklerim</h2>
+                <p class="text-muted mt-3">Kendimi geliştirmeye devam ettiğim ve kullandığım teknolojiler.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4"><div class="skill-card text-center p-4 rounded-4 shadow-sm bg-light h-100 transition-all"><i class="fas fa-cogs fa-3x text-bordo mb-3"></i><h5 class="fw-bold">C++</h5><p class="small text-muted mb-0">Sistem Programlama</p></div></div>
+                <div class="col-6 col-md-4"><div class="skill-card text-center p-4 rounded-4 shadow-sm bg-light h-100 transition-all"><i class="fab fa-java fa-3x text-bordo mb-3"></i><h5 class="fw-bold">Java</h5><p class="small text-muted mb-0">OOP & Backend Algoritması</p></div></div>
+                <div class="col-6 col-md-4"><div class="skill-card text-center p-4 rounded-4 shadow-sm bg-light h-100 transition-all"><i class="fas fa-database fa-3x text-bordo mb-3"></i><h5 class="fw-bold">SQL</h5><p class="small text-muted mb-0">Veritabanı Yönetimi</p></div></div>
+                <div class="col-6 col-md-4"><div class="skill-card text-center p-4 rounded-4 shadow-sm bg-light h-100 transition-all"><i class="fas fa-cubes fa-3x text-bordo mb-3"></i><h5 class="fw-bold">Yazılım Mimarisi</h5><p class="small text-muted mb-0">Design Patterns (Tasarım Kalıpları)</p></div></div>
+                <div class="col-6 col-md-4"><div class="skill-card text-center p-4 rounded-4 shadow-sm bg-light h-100 transition-all"><i class="fas fa-check-double fa-3x text-bordo mb-3"></i><h5 class="fw-bold">Temiz Kod</h5><p class="small text-muted mb-0">SOLID Prensipleri</p></div></div>
+                <div class="col-6 col-md-4"><div class="skill-card text-center p-4 rounded-4 shadow-sm bg-light h-100 transition-all"><i class="fas fa-laptop-code fa-3x text-bordo mb-3"></i><h5 class="fw-bold">Web</h5><p class="small text-muted mb-0">HTML, CSS, Bootstrap</p></div></div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-bordo-dark text-white py-4 border-top border-bordo mt-auto">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2026 Pınar Yılmaz. Tüm Hakları Saklıdır.</p>
+            <p class="small text-white-50 mb-0">HTML, CSS ve Bootstrap ile sevgiyle tasarlandı.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Paylaş Butonu Scripti -->
+    <script>
+        function shareWebsite() {
+            const url = window.location.href;
+            if (navigator.share && window.location.protocol === 'https:') {
+                navigator.share({
+                    title: 'Pınar Yılmaz | Yazılım Geliştirici',
+                    text: 'Pınar Yılmaz\'ın portföyünü ve projelerini inceleyin!',
+                    url: url
+                }).catch(console.error);
+            } else {
+                const tempInput = document.createElement("input");
+                tempInput.value = url;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                
+                if (window.location.protocol === 'file:') {
+                    alert("Siteniz şu an bilgisayarınızda çalıştığı için yerel dosya linkini kopyaladık. Sitenizi internete yüklediğinizde bu buton doğrudan Whatsapp vb. paylaşım menüsünü açacaktır!");
+                } else {
+                    alert("Site linki kopyalandı! İstediğiniz yerde paylaşabilirsiniz.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

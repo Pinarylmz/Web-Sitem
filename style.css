@@ -1,0 +1,254 @@
+/* Genel Ayarlar */
+:root {
+    /* Renk Paleti - Bordo ve Beyaz Tonları */
+    --bordo-primary: #800000;    /* Klasik Bordo */
+    --bordo-dark: #4A0E17;       /* Koyu Bordo */
+    --bordo-light: #A52A2A;      /* Açık Bordo */
+    --bordo-accent: #9E1B22;     /* Vurgu Bordosu */
+    --white-soft: #f8f9fa;       /* Kırık Beyaz / Açık Gri */
+    --text-main: #333333;        /* Ana Metin */
+    --text-muted: #6c757d;       /* Silik Metin */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Renk Sınıfları */
+.bg-bordo {
+    background-color: var(--bordo-primary) !important;
+}
+
+.bg-bordo-dark {
+    background-color: var(--bordo-dark) !important;
+}
+
+.bg-bordo-gradient {
+    background: linear-gradient(135deg, var(--bordo-primary) 0%, var(--bordo-dark) 100%) !important;
+}
+
+.text-bordo {
+    color: var(--bordo-primary) !important;
+}
+
+.border-bordo {
+    border-color: var(--bordo-primary) !important;
+}
+
+/* Buton Ayarları */
+.btn-bordo {
+    background-color: var(--bordo-primary);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-bordo:hover {
+    background-color: var(--bordo-dark);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(128, 0, 0, 0.3);
+}
+
+/* Navbar */
+.navbar {
+    padding: 1rem 0;
+    transition: all 0.4s ease;
+}
+
+.navbar-scrolled {
+    background-color: rgba(74, 14, 23, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 0.7rem 0;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    margin: 0 5px;
+    position: relative;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 80%;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    padding-top: 76px; /* Navbar yüksekliği */
+}
+
+.profile-placeholder {
+    width: 280px;
+    height: 280px;
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+}
+
+.profile-placeholder:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2) !important;
+}
+
+/* Ortak Bölüm Başlıkları */
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 50px;
+    height: 3px;
+    background-color: var(--bordo-primary);
+    border-radius: 2px;
+}
+
+.text-center .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Sosyal Medya İkonları */
+.social-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-circle:hover {
+    background-color: var(--bordo-dark) !important;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+}
+
+/* Kart Efektleri */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    background-color: white !important;
+    border-bottom: 3px solid var(--bordo-primary);
+}
+
+/* Timeline (Özgeçmiş) */
+.timeline {
+    border-left: 2px dashed var(--bordo-light);
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.timeline-item {
+    transition: all 0.3s ease;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: var(--bordo-primary);
+    border: 3px solid white;
+    border-radius: 50%;
+    left: -31px;
+    top: 20px;
+    box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.2);
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+}
+
+/* Form Input Odaklanma Rengi */
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(128, 0, 0, 0.25);
+    border-color: var(--bordo-light);
+}
+
+/* Mobil Cihazlar İçin Boğulmayı Önleyici Ek Ayarlar (Responsive) */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--bordo-dark);
+        padding: 1rem;
+        border-radius: 10px;
+        margin-top: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .hero {
+        text-align: center;
+        padding-top: 100px;
+    }
+    
+    .profile-placeholder {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .timeline {
+        padding-left: 15px;
+    }
+    
+    .timeline-item::before {
+        left: -24px;
+    }
+}
+
+/* Ekstra küçük ekranlar için */
+@media (max-width: 576px) {
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    .hero p.lead {
+        font-size: 1rem;
+    }
+    .hero .name-title {
+        font-size: 3.2rem;
+    }
+}
+
+/* Özel İsim Fontu ve Navbar Resmi */
+.name-title {
+    font-family: 'Playfair Display', serif !important;
+    letter-spacing: 0.5px;
+}
+
+.hero .name-title {
+    font-size: 4.5rem;
+}
+
+.navbar-brand-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    margin-right: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Pınar Yılmaz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-bordo shadow-sm" style="background-color: var(--bordo-dark) !important;">
+        <div class="container">
+            <a class="navbar-brand fw-bold name-title fs-3 d-flex align-items-center" href="index.html">
+                <img src="profile.jpg.jpeg" alt="Pınar Yılmaz" class="navbar-brand-img">
+                Pınar Yılmaz
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Hakkımda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="skills.html">Yetenekler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Özgeçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projeler</a></li>
+                    <li class="nav-item mt-3 mt-lg-0 ms-lg-3"><a class="btn btn-light text-bordo btn-sm px-4 rounded-pill fw-bold" href="contact.html">Bana Ulaşın</a></li>
+                    <!-- Paylaş Butonu -->
+                    <li class="nav-item ms-1">
+                        <button class="btn btn-link nav-link px-2" onclick="shareWebsite()" title="Siteyi Paylaş">
+                            <i class="fas fa-share-nodes fs-5"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="py-5 bg-white flex-grow-1 d-flex align-items-center">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <h2 class="text-bordo fw-bold mb-4">Benimle İletişime Geçin</h2>
+                    <p class="mb-5 text-muted">Yeni bir proje fikriniz mi var? Veya sadece merhaba demek mi istiyorsunuz? Formu doldurun, size en kısa sürede dönüş yapayım.</p>
+                    <div class="contact-info d-flex align-items-center mb-4 p-3 bg-light rounded-4">
+                        <div class="icon-box bg-white text-bordo rounded-circle d-flex justify-content-center align-items-center shadow-sm me-4" style="width: 50px; height: 50px;"><i class="fas fa-envelope"></i></div>
+                        <div><h6 class="fw-bold mb-1">E-posta</h6><p class="mb-0 text-muted">pinaryilmaz719@gmail.com</p></div>
+                    </div>
+
+                    <div class="mt-5">
+                        <h5 class="fw-bold text-bordo mb-4">Sosyal Medya Hesaplarım</h5>
+                        <div class="d-flex gap-3">
+                            <a href="https://www.linkedin.com/in/pınar-yılmaz-755a79330?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-circle bg-bordo text-white shadow"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/Pinarylmz" target="_blank" class="social-circle bg-bordo text-white shadow"><i class="fab fa-github"></i></a>
+                            <a href="https://www.instagram.com/pinarr.yllmz/" target="_blank" class="social-circle bg-bordo text-white shadow"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                        <div class="card-body p-5">
+                            <form>
+                                <div class="mb-4"><label class="form-label fw-semibold text-muted">Adınız Soyadınız</label><input type="text" class="form-control form-control-lg border-0 bg-light rounded-3" placeholder="Adınız Soyadınız"></div>
+                                <div class="mb-4"><label class="form-label fw-semibold text-muted">E-posta Adresiniz</label><input type="email" class="form-control form-control-lg border-0 bg-light rounded-3" placeholder="ornek@mail.com"></div>
+                                <div class="mb-4"><label class="form-label fw-semibold text-muted">Konu</label><input type="text" class="form-control form-control-lg border-0 bg-light rounded-3" placeholder="Proje Teklifi"></div>
+                                <div class="mb-4"><label class="form-label fw-semibold text-muted">Mesajınız</label><textarea class="form-control border-0 bg-light rounded-3" rows="5" placeholder="Mesajınızı buraya yazın..."></textarea></div>
+                                <button type="submit" class="btn btn-bordo btn-lg w-100 py-3 rounded-3 fw-bold">Gönder <i class="fas fa-paper-plane ms-2"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-bordo-dark text-white py-4 border-top border-bordo mt-auto">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2026 Pınar Yılmaz. Tüm Hakları Saklıdır.</p>
+            <p class="small text-white-50 mb-0">HTML, CSS ve Bootstrap ile sevgiyle tasarlandı.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Paylaş Butonu Scripti -->
+    <script>
+        function shareWebsite() {
+            const url = window.location.href;
+            if (navigator.share && window.location.protocol === 'https:') {
+                navigator.share({
+                    title: 'Pınar Yılmaz | Yazılım Geliştirici',
+                    text: 'Pınar Yılmaz\'ın portföyünü ve projelerini inceleyin!',
+                    url: url
+                }).catch(console.error);
+            } else {
+                const tempInput = document.createElement("input");
+                tempInput.value = url;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                
+                if (window.location.protocol === 'file:') {
+                    alert("Siteniz şu an bilgisayarınızda çalıştığı için yerel dosya linkini kopyaladık. Sitenizi internete yüklediğinizde bu buton doğrudan Whatsapp vb. paylaşım menüsünü açacaktır!");
+                } else {
+                    alert("Site linki kopyalandı! İstediğiniz yerde paylaşabilirsiniz.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

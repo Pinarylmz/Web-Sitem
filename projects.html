@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geliştirdiğim Projeler | Pınar Yılmaz</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
+        rel="stylesheet">
+    <!-- Özel CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .projects-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-bordo shadow-sm" style="background-color: var(--bordo-dark) !important;">
+        <div class="container">
+            <a class="navbar-brand fw-bold name-title fs-3 d-flex align-items-center" href="index.html">
+                <img src="profile.jpg.jpeg" alt="Pınar Yılmaz" class="navbar-brand-img">
+                Pınar Yılmaz
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Hakkımda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="skills.html">Yetenekler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resume.html">Özgeçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projeler</a></li>
+                    <li class="nav-item mt-3 mt-lg-0 ms-lg-3"><a class="btn btn-outline-light btn-sm px-4 rounded-pill" href="contact.html">Bana Ulaşın</a></li>
+                    <!-- Paylaş Butonu -->
+                    <li class="nav-item ms-1">
+                        <button class="btn btn-link nav-link px-2" onclick="shareWebsite()" title="Siteyi Paylaş">
+                            <i class="fas fa-share-nodes fs-5"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ana İçerik -->
+    <section class="projects-hero bg-light py-5">
+        <div class="container py-5">
+            <!-- Boş Durum (Empty State) Mesajı -->
+            <div class="text-center" id="empty-state-message">
+                <div class="mb-4">
+                    <i class="fas fa-laptop-code fa-5x text-bordo opacity-50" id="secretIcon" style="cursor: default;" title="Tıkla!"></i>
+                </div>
+                <h1 class="display-4 fw-bold text-bordo mb-4">Geliştirdiğim Projeler</h1>
+                <p class="lead text-muted mb-5 mx-auto" style="max-width: 800px;">
+                    Şu an portföyümde aktif olarak sergilenen tamamlanmış bir projem bulunmamaktadır. Ancak C++, Java, SQL ve Web Teknolojileri (HTML, CSS, Bootstrap) üzerinde kendimi geliştirmeye, yeni mimariler tasarlamaya ve kodlamaya tam gaz devam ediyorum.
+                    <br><br>
+                    Çok yakında üzerinde çalıştığım backend projeleri, veritabanı yönetim sistemleri ve web uygulamaları kaynak kodları ile birlikte bu sayfada yer alacak. Takipte kalın!
+                </p>
+            </div>
+
+            <!-- Projelerin Ekleneceği Kapsayıcı (Container) -->
+            <div class="row g-4 mt-2 justify-content-center" id="projects-container">
+                <!-- Kalıcı olarak eklenecek proje kartları buraya gelecek -->
+            </div>
+
+            <!-- Devam Eden Projeler (Süreç Göstergesi) -->
+            <div class="mt-5 pt-5 border-top border-light-subtle">
+                <h3 class="fw-bold text-bordo mb-4 text-center"><i class="fas fa-cogs me-2"></i> Devam Eden Projeler</h3>
+                <p class="text-center text-muted mb-5">Şu an aktif olarak kodladığım ve mutfakta pişmeye devam eden çalışmalarım.</p>
+                
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <!-- Devam Eden Proje Kartı -->
+                        <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4 transition-all">
+                            <div class="card-body p-4 p-md-5">
+                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+                                    <h4 class="fw-bold text-bordo mb-2 mb-md-0">Kütüphane Yönetim Otomasyonu</h4>
+                                    <span class="badge bg-warning text-dark rounded-pill px-3 py-2 shadow-sm"><i class="fas fa-spinner fa-spin me-1"></i> Geliştirme Aşamasında</span>
+                                </div>
+                                <p class="text-muted mb-4">
+                                    C++ ve MySQL kullanarak bir kütüphanenin tüm kitap, üye ve ödünç alma süreçlerini yönetecek bir masaüstü otomasyon uygulaması geliştiriyorum. Nesne Yönelimli Programlama (OOP) prensiplerine sadık kalarak temiz bir mimari kurmaya odaklanıyorum.
+                                </p>
+                                
+                                <!-- İlerleme Çubuğu -->
+                                <div class="mb-2 d-flex justify-content-between small fw-bold text-secondary">
+                                    <span>Genel İlerleme</span>
+                                    <span>%60</span>
+                                </div>
+                                <div class="progress mb-4 rounded-pill shadow-sm" style="height: 12px;">
+                                    <div class="progress-bar bg-bordo progress-bar-striped progress-bar-animated" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                
+                                <!-- Süreç Adımları (Checklist) -->
+                                <div class="bg-light p-4 rounded-4 border">
+                                    <h6 class="fw-bold mb-3 small text-uppercase text-muted"><i class="fas fa-tasks me-2"></i> Mevcut Durum ve Planlama</h6>
+                                    <ul class="list-unstyled mb-0 small">
+                                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2 fs-6"></i> Veritabanı tablolarının oluşturulması <strong>(Tamamlandı)</strong></li>
+                                        <li class="mb-3"><i class="fas fa-check-circle text-success me-2 fs-6"></i> Temel CRUD (Ekle/Sil/Güncelle) sınıflarının yazılması <strong>(Tamamlandı)</strong></li>
+                                        <li class="mb-3"><i class="fas fa-dot-circle text-primary me-2 fs-6"></i> UI (Kullanıcı Arayüzü) entegrasyonu <strong>(Devam Ediyor)</strong></li>
+                                        <li><i class="far fa-circle text-muted me-2 fs-6"></i> Raporlama modülünün eklenmesi <strong>(Planlanıyor)</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Proje kartı bitişi -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="index.html" class="btn btn-outline-bordo btn-lg px-5 py-3 rounded-pill shadow-sm transition-all">
+                    <i class="fas fa-arrow-left me-2"></i> Ana Sayfaya Geri Dön
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GİZLİ ADMİN BUTONU -->
+    <button id="adminAddBtn" class="btn btn-bordo rounded-circle shadow-lg position-fixed d-none" style="bottom: 30px; right: 30px; width: 60px; height: 60px; z-index: 1000;" data-bs-toggle="modal" data-bs-target="#addProjectModal" title="Yeni Proje Ekle">
+        <i class="fas fa-plus fa-2x"></i>
+    </button>
+
+    <!-- PROJE EKLEME MODALI -->
+    <div class="modal fade" id="addProjectModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header bg-bordo text-white border-0 p-4">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-magic me-2"></i> Yeni Proje Üretici</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4 bg-light">
+                    <div class="alert alert-info border-0 shadow-sm rounded-3 small">
+                        <i class="fas fa-info-circle me-2"></i> Bu araç sadece sizin tarafınızdan görülebilir. Proje bilgilerinizi girin, sistem size sitenize yapıştırmanız gereken tam HTML kodunu verecektir.
+                    </div>
+                    <form id="addProjectForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-bordo">Proje Adı</label>
+                            <input type="text" class="form-control form-control-lg border-0 shadow-sm rounded-3" id="pName" placeholder="Örn: Stok Takip Sistemi" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-bordo">Kısa Tanım</label>
+                            <textarea class="form-control border-0 shadow-sm rounded-3" id="pDesc" rows="3" placeholder="Projenin amacı ve kullandığınız yapılar..." required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold text-bordo">Teknolojiler</label>
+                            <input type="text" class="form-control border-0 shadow-sm rounded-3" id="pTech" placeholder="Virgülle ayırın (Örn: Java, OOP, MySQL)" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold text-bordo">GitHub / Kaynak Kod Linki (Opsiyonel)</label>
+                            <input type="url" class="form-control border-0 shadow-sm rounded-3" id="pLink" placeholder="https://github.com/Pinarylmz/proje">
+                        </div>
+                        <button type="submit" class="btn btn-bordo btn-lg w-100 rounded-pill fw-bold shadow-sm">
+                            <i class="fas fa-code me-2"></i> Kodu Üret ve Önizle
+                        </button>
+                    </form>
+                    
+                    <div id="htmlOutputContainer" class="mt-4 d-none">
+                        <hr class="text-muted">
+                        <h6 class="text-success fw-bold"><i class="fas fa-check-circle me-1"></i> Proje Kodunuz Hazır!</h6>
+                        <p class="small text-muted mb-2">Aşağıdaki kodu kopyalayın ve kod editörünüzde <code>projects.html</code> dosyasındaki <strong>&lt;div id="projects-container"&gt;</strong> kısmının içine yapıştırın.</p>
+                        <textarea id="htmlOutput" class="form-control font-monospace small bg-white border shadow-sm rounded-3" rows="6" readonly style="font-size: 0.85rem;"></textarea>
+                        <button type="button" class="btn btn-outline-bordo mt-3 w-100 rounded-pill fw-bold" onclick="copyCode(this)">
+                            <i class="fas fa-copy me-2"></i> Kodu Kopyala
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-bordo-dark text-white py-4 border-top border-bordo mt-auto">
+        <div class="container text-center">
+            <p class="mb-2">&copy; 2026 Pınar Yılmaz. Tüm Hakları Saklıdır.</p>
+            <p class="small text-white-50 mb-0">HTML, CSS ve Bootstrap ile sevgiyle tasarlandı.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ADMİN PANELİ JAVASCRIPT KODLARI -->
+    <script>
+        // 1. Sadece Geliştirici Ortamında (Bilgisayarınızda) Gösterme Mantığı
+        // Eğer site bir sunucuda (https://) değil de, direkt bilgisayarınızdaki klasörden (file://) veya localhost'tan açıldıysa admin butonunu göster.
+        const isLocal = window.location.protocol === 'file:' || window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+        
+        // URL'ye manuel olarak ?admin=true yazılırsa da açılsın
+        const urlParams = new URLSearchParams(window.location.search);
+        const forceAdmin = urlParams.get('admin') === 'true';
+
+        if (isLocal || forceAdmin) {
+            document.getElementById('adminAddBtn').classList.remove('d-none');
+            console.log("Admin Modu Aktif: Geliştirici ortamı algılandı.");
+        }
+
+        // 2. Form Gönderildiğinde HTML Üretme
+        document.getElementById('addProjectForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('pName').value;
+            const desc = document.getElementById('pDesc').value;
+            const techStr = document.getElementById('pTech').value;
+            const link = document.getElementById('pLink').value;
+            
+            // Teknolojileri ayırıp badge'lere çevirme
+            const techs = techStr.split(',').map(t => t.trim()).filter(t => t);
+            let badgesHtml = '';
+            techs.forEach(t => {
+                badgesHtml += `\n                                <span class="badge bg-light text-dark border">${t}</span>`;
+            });
+
+            // Link varsa buton ekleme
+            const linkHtml = link ? `\n                            <a href="${link}" target="_blank" class="btn btn-outline-bordo btn-sm rounded-pill px-4 mt-3"><i class="fab fa-github me-2"></i> Kaynak Kodu Gör</a>` : '';
+
+            // Proje Kartı HTML Şablonu
+            const cardHtml = `
+                <!-- Proje Başlangıcı: ${name} -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="skill-card bg-white h-100 border-0 shadow-sm rounded-4 overflow-hidden transition-all p-2">
+                        <div class="card-body p-4 text-center">
+                            <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 60px; height: 60px;">
+                                <i class="fas fa-code fa-2x text-bordo"></i>
+                            </div>
+                            <h5 class="fw-bold text-bordo mb-3">${name}</h5>
+                            <p class="text-muted small mb-4">${desc}</p>
+                            <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">${badgesHtml}
+                            </div>${linkHtml}
+                        </div>
+                    </div>
+                </div>
+                <!-- Proje Bitişi -->`;
+
+            // Üretilen kodu ekrana yansıt
+            document.getElementById('htmlOutput').value = cardHtml;
+            document.getElementById('htmlOutputContainer').classList.remove('d-none');
+
+            // Görsel olarak anında önizleme yap (Sadece siz görürsünüz, sayfayı yenileyince gider)
+            const emptyMessage = document.getElementById('empty-state-message');
+            if (emptyMessage) emptyMessage.style.display = 'none'; // "Proje yok" yazısını gizle
+            
+            const container = document.getElementById('projects-container');
+            container.insertAdjacentHTML('beforeend', cardHtml);
+            
+            // Sayfayı aşağı kaydır
+            document.getElementById('htmlOutputContainer').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // 3. Kodu Panoya Kopyalama İşlevi
+        function copyCode(btnElement) {
+            const copyText = document.getElementById("htmlOutput");
+            
+            // Modern kopyalama API'sini kullan
+            navigator.clipboard.writeText(copyText.value).then(() => {
+                const originalText = btnElement.innerHTML;
+                btnElement.innerHTML = '<i class="fas fa-check me-2"></i> Kopyalandı!';
+                btnElement.classList.replace('btn-outline-bordo', 'btn-success');
+                btnElement.classList.add('text-white');
+                
+                setTimeout(() => {
+                    btnElement.innerHTML = originalText;
+                    btnElement.classList.replace('btn-success', 'btn-outline-bordo');
+                    btnElement.classList.remove('text-white');
+                }, 3000);
+            }).catch(err => {
+                // Hata olursa klasik yöntemi dene
+                copyText.select();
+                document.execCommand("copy");
+                alert("Kod kopyalandı!");
+            });
+        }
+    </script>
+    <!-- Paylaş Butonu Scripti -->
+    <script>
+        function shareWebsite() {
+            const url = window.location.href;
+            if (navigator.share && window.location.protocol === 'https:') {
+                navigator.share({
+                    title: 'Pınar Yılmaz | Yazılım Geliştirici',
+                    text: 'Pınar Yılmaz\'ın portföyünü ve projelerini inceleyin!',
+                    url: url
+                }).catch(console.error);
+            } else {
+                const tempInput = document.createElement("input");
+                tempInput.value = url;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                
+                if (window.location.protocol === 'file:') {
+                    alert("Siteniz şu an bilgisayarınızda çalıştığı için yerel dosya linkini kopyaladık. Sitenizi internete yüklediğinizde bu buton doğrudan Whatsapp vb. paylaşım menüsünü açacaktır!");
+                } else {
+                    alert("Site linki kopyalandı! İstediğiniz yerde paylaşabilirsiniz.");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

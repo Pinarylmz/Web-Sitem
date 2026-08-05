@@ -15,6 +15,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap"
         rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Özel CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -29,21 +31,33 @@
                 <img src="profile.jpg.jpeg" alt="Pınar Yılmaz" class="navbar-brand-img">
                 Pınar Yılmaz
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <div class="d-flex align-items-center order-lg-3">
+                <!-- Tema ve Dil Değiştirici -->
+                <div class="d-flex align-items-center me-3">
+                    <button class="btn btn-link text-white text-decoration-none p-0 me-3" onclick="toggleTheme()" title="Karanlık Modu Değiştir">
+                        <i id="theme-icon" class="fas fa-moon fs-5"></i>
+                    </button>
+                    <button id="btn-lang-tr" class="btn btn-link text-white fw-bold text-decoration-none p-0 me-2" onclick="setLanguage('tr')">TR</button>
+                    <span class="text-white-50">|</span>
+                    <button id="btn-lang-en" class="btn btn-link text-white-50 text-decoration-none p-0 ms-2" onclick="setLanguage('en')">EN</button>
+                </div>
+                <!-- Menü Toggler -->
+                <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end order-lg-2" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Ana Sayfa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">Hakkımda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="skills.html">Yetenekler</a></li>
-                    <li class="nav-item"><a class="nav-link" href="resume.html">Özgeçmiş</a></li>
-                    <li class="nav-item"><a class="nav-link" href="projects.html">Projeler</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html" data-i18n="nav_home">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="nav_about">Hakkımda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="skills.html" data-i18n="nav_skills">Yetenekler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html" data-i18n="nav_projects">Projeler</a></li>
                     <li class="nav-item mt-3 mt-lg-0 ms-lg-3">
-                        <a class="btn btn-outline-light btn-sm px-4 rounded-pill" href="contact.html">Bana Ulaşın</a>
+                        <a class="btn btn-outline-light btn-sm px-4 rounded-pill" href="contact.html" data-i18n="nav_contact">Bana Ulaşın</a>
                     </li>
+
                     <!-- Paylaş Butonu -->
-                    <li class="nav-item ms-1">
+                    <li class="nav-item ms-1 mt-2 mt-lg-0">
                         <button class="btn btn-link nav-link px-2" onclick="shareWebsite()" title="Siteyi Paylaş">
                             <i class="fas fa-share-nodes fs-5"></i>
                         </button>
@@ -57,26 +71,19 @@
     <section id="home" class="hero bg-bordo-gradient text-white d-flex align-items-center position-relative">
         <div class="container text-center text-lg-start position-relative z-index-1">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0 order-2 order-lg-1">
-                    <span class="badge bg-white text-bordo px-3 py-2 rounded-pill mb-3 fw-semibold shadow-sm">Hoş
-                        Geldiniz, Ben</span>
+                <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start" data-aos="fade-right">
+                    <p class="text-white-50 mb-2 fw-semibold" style="letter-spacing: 2px; text-transform: uppercase;" data-i18n="home_welcome">Hoş Geldiniz, Ben</p>
                     <h1 class="display-2 fw-bold mb-3 name-title">Pınar Yılmaz</h1>
-                    <h2 class="h3 fw-light mb-4 opacity-75">Backend & Sistem Geliştirici Adayı</h2>
-                    <p class="lead mb-5 opacity-75">
+                    <h2 class="h3 fw-light mb-4 opacity-75" data-i18n="home_role">Backend & Sistem Geliştirici Adayı</h2>
+                    <p class="lead mb-5 opacity-75" data-i18n="home_desc">
                         C++, Java ve SQL dünyasında kendi mutfağımda projeler üretiyor, tasarım kalıplarını ve temiz kod
                         prensiplerini bu yolculuğun pusulası yapıyorum. Belki yolun başındayım ama attığım her adımın,
                         kurduğum her veritabanının hikayesi burada. Keşfettikçe ve ürettikçe bu sayfayı birlikte
                         dolduracağız!
                     </p>
-                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
-                        <a href="about.html"
-                            class="btn btn-light text-bordo btn-lg px-4 py-3 rounded-pill fw-bold shadow-sm">Keşfetmeye
-                            Başla</a>
-                        <a href="resume.html" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill shadow-sm">CV'mi
-                            İncele</a>
-                    </div>
+
                 </div>
-                <div class="col-lg-6 order-1 order-lg-2 text-center mb-5 mb-lg-0">
+                <div class="col-lg-6 order-1 order-lg-2 text-center mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
                     <div class="profile-img-container mx-auto">
                         <img src="profile.jpg.jpeg" alt="Pınar Yılmaz"
                             class="profile-placeholder rounded-circle shadow-lg mx-auto" style="object-fit: cover;">
@@ -93,6 +100,11 @@
             </svg>
         </div>
     </section>
+
+    <!-- CV Butonu Alanı -->
+    <div class="bg-white pt-5 pb-3 text-center position-relative" style="z-index: 10;">
+        <button onclick="window.open('Pinar_Yilmaz_CV.pdf', '_blank')" class="btn btn-bordo btn-lg px-5 py-3 rounded-pill fw-bold shadow-lg" data-i18n="home_btn_cv" style="transform: translateY(-20px);">CV'mi İncele</button>
+    </div>
 
     <!-- Teknoloji Vitrini -->
     <div class="bg-white py-4 border-bottom shadow-sm">
@@ -130,14 +142,14 @@
     <section class="py-6 bg-white">
         <div class="container py-4">
             <div class="row justify-content-center">
-                <div class="col-lg-10">
+                <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
                     <div class="card border-0 bg-bordo-gradient text-white shadow-lg rounded-4 overflow-hidden position-relative p-2 p-md-4">
                         <div class="card-body text-center position-relative z-index-1">
-                            <h2 class="fw-bold mb-4 text-white">Kısaca Ben</h2>
-                            <p class="lead mb-5 px-md-5 text-white opacity-75" style="font-weight: 300;">
+                            <h2 class="fw-bold mb-4 text-white" data-i18n="home_about_title">Kısaca Ben</h2>
+                            <p class="lead mb-5 px-md-5 text-white opacity-75" style="font-weight: 300;" data-i18n="home_about_desc">
                                 Yazılım dünyasına, karmaşık sistemlerin mutfağı olan Backend tarafına duyduğum merakla adım attım. Kod yazmak benim için sadece çalışan bir program üretmek değil, aynı zamanda <strong class="text-white fw-bold">sürdürülebilir, verimli ve temiz bir mimari</strong> inşa etmektir. Öğrenme tutkumla, her satır kodda kendimi geliştirmeye devam ediyorum.
                             </p>
-                            <a href="about.html" class="btn btn-light text-bordo btn-lg rounded-pill px-5 transition-all shadow-sm fw-bold">
+                            <a href="about.html" class="btn btn-light text-bordo btn-lg rounded-pill px-5 transition-all shadow-sm fw-bold" data-i18n="home_about_btn">
                                 Hikayemin Tamamını Oku <i class="fas fa-arrow-right ms-2"></i>
                             </a>
                             
@@ -159,21 +171,23 @@
     </section>
 
     <!-- Öne Çıkanlar (Highlight Cards) -->
-    <section class="py-6 bg-white">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="text-bordo fw-bold position-relative section-title d-inline-block">Neler Yapıyorum?</h2>
-                <p class="text-muted mt-3">Yazılım geliştirme sürecindeki temel odak noktalarım.</p>
+    <section class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="row justify-content-center mb-5" data-aos="fade-up">
+                <div class="col-lg-8 text-center">
+                    <h2 class="text-bordo fw-bold position-relative section-title d-inline-block" data-i18n="home_what_i_do_title">Neler Yapıyorum?</h2>
+                    <p class="lead text-muted mt-4" data-i18n="home_what_i_do_subtitle">Yazılım geliştirme sürecindeki temel odak noktalarım.</p>
+                </div>
             </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-4">
-                    <div class="skill-card bg-white p-4 rounded-4 shadow-sm h-100 transition-all">
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 h-100 shadow-sm bg-light text-center p-4 transition-all skill-card rounded-4">
                         <div class="text-center">
                             <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
                                 <i class="fas fa-server fa-2x text-bordo"></i>
                             </div>
-                            <h5 class="fw-bold mb-3">Sistem Geliştirme</h5>
-                            <p class="text-muted small mb-0">C++ ve Java ile sağlam, sürdürülebilir ve verimli arka uç (backend) mimarileri tasarlıyorum.</p>
+                            <h5 class="fw-bold mb-3" data-i18n="home_skill1_title">Sistem Geliştirme</h5>
+                            <p class="text-muted small mb-0" data-i18n="home_skill1_desc">C++ ve Java ile sağlam, sürdürülebilir ve verimli arka uç (backend) mimarileri tasarlıyorum.</p>
                         </div>
                     </div>
                 </div>
@@ -183,8 +197,8 @@
                             <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
                                 <i class="fas fa-code fa-2x text-bordo"></i>
                             </div>
-                            <h5 class="fw-bold mb-3">Temiz Kod</h5>
-                            <p class="text-muted small mb-0">SOLID prensiplerine ve Design Patterns (Tasarım Kalıpları) standartlarına uygun, okunabilir kodlar yazıyorum.</p>
+                            <h5 class="fw-bold mb-3" data-i18n="home_skill2_title">Temiz Kod</h5>
+                            <p class="text-muted small mb-0" data-i18n="home_skill2_desc">SOLID prensiplerine ve Design Patterns (Tasarım Kalıpları) standartlarına uygun, okunabilir kodlar yazıyorum.</p>
                         </div>
                     </div>
                 </div>
@@ -194,8 +208,8 @@
                             <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
                                 <i class="fas fa-desktop fa-2x text-bordo"></i>
                             </div>
-                            <h5 class="fw-bold mb-3">Modern Arayüzler</h5>
-                            <p class="text-muted small mb-0">HTML, CSS ve Bootstrap kullanarak kullanıcı dostu ve responsive (mobil uyumlu) tasarımlar geliştiriyorum.</p>
+                            <h5 class="fw-bold mb-3" data-i18n="home_skill3_title">Modern Arayüzler</h5>
+                            <p class="text-muted small mb-0" data-i18n="home_skill3_desc">HTML, CSS ve Bootstrap kullanarak kullanıcı dostu ve responsive (mobil uyumlu) tasarımlar geliştiriyorum.</p>
                         </div>
                     </div>
                 </div>
@@ -208,12 +222,12 @@
         <div class="container position-relative z-index-1">
             <div class="row align-items-center text-center text-lg-start">
                 <div class="col-lg-8 mb-4 mb-lg-0">
-                    <h3 class="fw-bold mb-2">Yeni Bir Proje mi Düşünüyorsunuz?</h3>
-                    <p class="lead opacity-75 mb-0">Birlikte çalışmak veya projeler hakkında fikir alışverişinde bulunmak için harika bir zaman!</p>
+                    <h3 class="fw-bold mb-2" data-i18n="home_cta_title">Yeni Bir Proje mi Düşünüyorsunuz?</h3>
+                    <p class="lead opacity-75 mb-0" data-i18n="home_cta_desc">Birlikte çalışmak veya projeler hakkında fikir alışverişinde bulunmak için harika bir zaman!</p>
                 </div>
                 <div class="col-lg-4 text-lg-end">
                     <a href="contact.html" class="btn btn-light text-bordo btn-lg px-5 py-3 rounded-pill fw-bold shadow">
-                        Bana Ulaşın <i class="fas fa-paper-plane ms-2"></i>
+                        <span data-i18n="nav_contact">Bana Ulaşın</span> <i class="fas fa-paper-plane ms-2"></i>
                     </a>
                 </div>
             </div>
@@ -223,10 +237,13 @@
     <!-- Footer -->
     <footer class="bg-bordo-dark text-white py-4 border-top border-bordo">
         <div class="container text-center">
-            <p class="mb-2">&copy; 2026 Pınar Yılmaz. Tüm Hakları Saklıdır.</p>
-            <p class="small text-white-50 mb-0">HTML, CSS ve Bootstrap ile sevgiyle tasarlandı.</p>
+            <p class="mb-2" data-i18n="footer_rights">&copy; 2026 Pınar Yılmaz. Tüm Hakları Saklıdır.</p>
+            <p class="small text-white-50 mb-0" data-i18n="footer_made_with">HTML, CSS ve Bootstrap ile sevgiyle tasarlandı.</p>
         </div>
     </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -270,6 +287,9 @@
             }
         }
     </script>
+    <!-- Dil Desteği Scriptleri -->
+    <script src="translations.js"></script>
+    <script src="language.js"></script>
 </body>
 
 </html>

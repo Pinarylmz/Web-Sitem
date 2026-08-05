@@ -5,15 +5,60 @@
     --bordo-dark: #4A0E17;       /* Koyu Bordo */
     --bordo-light: #A52A2A;      /* Açık Bordo */
     --bordo-accent: #9E1B22;     /* Vurgu Bordosu */
-    --white-soft: #f8f9fa;       /* Kırık Beyaz / Açık Gri */
+    
+    /* Tema Renkleri (Varsayılan Açık Tema) */
+    --bg-main: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-card: #ffffff;
     --text-main: #333333;        /* Ana Metin */
     --text-muted: #6c757d;       /* Silik Metin */
+    --border-color: #dee2e6;
+}
+
+[data-theme="dark"] {
+    --bg-main: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-card: #252525;
+    --text-main: #f8f9fa;
+    --text-muted: #adb5bd;
+    --border-color: #343a40;
+    --bordo-primary: #9E1B22; /* Karanlıkta daha parlak bir bordo */
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--text-main);
+    background-color: var(--bg-main);
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Karanlık Mod Override Sınıfları */
+[data-theme="dark"] .bg-white { background-color: var(--bg-card) !important; }
+[data-theme="dark"] .bg-light { background-color: var(--bg-secondary) !important; }
+[data-theme="dark"] .text-muted { color: var(--text-muted) !important; }
+[data-theme="dark"] .border-top, [data-theme="dark"] .border-bottom, [data-theme="dark"] .border { border-color: var(--border-color) !important; }
+[data-theme="dark"] .card, [data-theme="dark"] .about-card, [data-theme="dark"] .timeline-item, [data-theme="dark"] .skill-card {
+    background-color: var(--bg-card) !important;
+    color: var(--text-main);
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.5) !important;
+}
+[data-theme="dark"] .hero-shape path { fill: var(--bg-main) !important; }
+[data-theme="dark"] input.form-control, [data-theme="dark"] textarea.form-control {
+    background-color: var(--bg-secondary) !important;
+    color: var(--text-main) !important;
+}
+[data-theme="dark"] input.form-control::placeholder, [data-theme="dark"] textarea.form-control::placeholder {
+    color: var(--text-muted) !important;
+}
+[data-theme="dark"] .form-label {
+    color: var(--text-main) !important;
+}
+[data-theme="dark"] .contact-info {
+    background-color: var(--bg-secondary) !important;
+}
+[data-theme="dark"] .icon-box {
+    background-color: var(--bg-card) !important;
 }
 
 /* Renk Sınıfları */
